@@ -1,0 +1,2 @@
+THINK_TIME = (3, 13)
+EAT_TIME = (1, 10)
