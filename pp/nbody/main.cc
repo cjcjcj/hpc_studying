@@ -1,31 +1,17 @@
-#include "nbody.h"
+#include "float3.h"
+#include "body.h"
+#include "approaches.h"
+#include "general.h"
 
 #include <vector>
-#include <random>
 #include <cmath>
-
 #include <ctime>
 #include <iostream>
 
-#define PI      3.141592653589793f
-#define PI_M2   6.283185307179586f
-
-std::random_device rd;
-std::mt19937 gen(rd());
-
-float rand(float r)
-{
-    std::uniform_real_distribution<float> dis(0, r);
-    return dis(gen);
-}
-float rand(float l, float r)
-{
-    std::uniform_real_distribution<float> dis(l, r);
-    return dis(gen);
-}
 
 float3 getPoint(float r)
 {
+    r -= .00001;
     const float
         phi = rand(PI_M2),
         sintheta = rand(-1.f, 1.f),
@@ -39,15 +25,11 @@ float3 getPoint(float r)
     return point;
 }
 
-int main()
+void sequential(int nbodies, int simulation_steps, float r_sphere=4000, float min_m=1.f, float max_m=100.f)
 {
+    std::cout << "---------------------------------------------------------------\n\n";
     std::clock_t    start, end;
-
-    const int nbodies = 100000;
-    std::vector<Body> bodies(nbodies);
-    float
-        r_sphere = 20,
-        min_m = 1.f, max_m = 100.f;
+    std::vector<Body*> bodies_a(nbodies), bodies_b(nbodies);
     
     float3 position, velocity;
     float m;
@@ -58,14 +40,43 @@ int main()
         velocity = -position*.01f;
         m = rand(min_m, max_m);
 
-        bodies[i] = {position, velocity, m};
+        bodies_a[i] = new Body(position, velocity, m);
+        bodies_b[i] = new Body(position, velocity, m);
+    }
+    end = std::clock();
+    std::cout 
+              << "bodies count: " << nbodies << std::endl
+              << "initialization time: " << (end - start) / (double)(CLOCKS_PER_SEC) << " s\n\n";
+
+    // brute
+    start = std::clock(); nbody_seq(bodies_a, simulation_steps); end = std::clock();
+    std::cout << "Simulation time: " << (end - start) / (double)(CLOCKS_PER_SEC) << " s\n\n";
+    for(auto bi: bodies_a)
+    {
+        delete bi;
     }
 
-    return 0;
+    // bh
+    start = std::clock(); nbody_bh_seq(bodies_b, simulation_steps); end = std::clock();
+    std::cout << "Simulation time: " << (end - start) / (double)(CLOCKS_PER_SEC) << " s\n\n";
+    for(auto bi: bodies_b)
+    {
+        delete bi;
+    }
+}
 
-    std::cout << "started\n";
-    start = std::clock();
-    nbody_nn(bodies);
-    end = std::clock();
-    std::cout << "Time: " << (end - start) / (double)(CLOCKS_PER_SEC) << " ms" << std::endl;
+int main()
+{
+    const int
+        simulation_steps = 5,
+        max_pow = 3,
+        repeats = 5;
+
+    for (int repeat = 0; repeat < repeats; repeat++)
+    {
+        std::cout << "cycle #" << repeat << std::endl;
+        for(int pow=1; pow <= max_pow; pow++)
+            sequential(std::pow(10, pow), simulation_steps);
+        std::cout << std::endl;
+    }
 }
