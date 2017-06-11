@@ -1,0 +1,985 @@
+cycle #0
+---------------------------------------------------------------
+
+bodies count: 10
+initialization time: 0.000109 s
+
+[N body brute seq] 0 step
+Simulation step time: 0.000105 s
+[N body brute seq] 1 step
+Simulation step time: 8.4e-05 s
+[N body brute seq] 2 step
+Simulation step time: 8e-05 s
+[N body brute seq] 3 step
+Simulation step time: 8.2e-05 s
+[N body brute seq] 4 step
+Simulation step time: 8e-05 s
+Simulation time: 0.000476 s
+
+[N body BH seq] 0 step
+Tree building time: 8.3e-05 s
+Simulation step time: 0.000161 s
+Tree deleting time: 2.1e-05 s
+[N body BH seq] 1 step
+Tree building time: 5.2e-05 s
+Simulation step time: 0.000157 s
+Tree deleting time: 1.8e-05 s
+[N body BH seq] 2 step
+Tree building time: 5e-05 s
+Simulation step time: 0.000185 s
+Tree deleting time: 2.3e-05 s
+[N body BH seq] 3 step
+Tree building time: 5e-05 s
+Simulation step time: 0.000159 s
+Tree deleting time: 3.5e-05 s
+[N body BH seq] 4 step
+Tree building time: 5e-05 s
+Simulation step time: 0.000159 s
+Tree deleting time: 1.9e-05 s
+Simulation time: 0.001332 s
+
+---------------------------------------------------------------
+
+bodies count: 100
+initialization time: 0.000378 s
+
+[N body brute seq] 0 step
+Simulation step time: 0.007311 s
+[N body brute seq] 1 step
+Simulation step time: 0.006488 s
+[N body brute seq] 2 step
+Simulation step time: 0.006609 s
+[N body brute seq] 3 step
+Simulation step time: 0.005877 s
+[N body brute seq] 4 step
+Simulation step time: 0.00578 s
+Simulation time: 0.032127 s
+
+[N body BH seq] 0 step
+Tree building time: 0.000519 s
+Simulation step time: 0.008749 s
+Tree deleting time: 0.000118 s
+[N body BH seq] 1 step
+Tree building time: 0.000367 s
+Simulation step time: 0.008114 s
+Tree deleting time: 0.000109 s
+[N body BH seq] 2 step
+Tree building time: 0.000337 s
+Simulation step time: 0.007879 s
+Tree deleting time: 9.9e-05 s
+[N body BH seq] 3 step
+Tree building time: 0.000314 s
+Simulation step time: 0.007436 s
+Tree deleting time: 0.000108 s
+[N body BH seq] 4 step
+Tree building time: 0.000324 s
+Simulation step time: 0.006925 s
+Tree deleting time: 9.2e-05 s
+Simulation time: 0.041598 s
+
+---------------------------------------------------------------
+
+bodies count: 1000
+initialization time: 0.002185 s
+
+[N body brute seq] 0 step
+Simulation step time: 0.200652 s
+[N body brute seq] 1 step
+Simulation step time: 0.14758 s
+[N body brute seq] 2 step
+Simulation step time: 0.147472 s
+[N body brute seq] 3 step
+Simulation step time: 0.147395 s
+[N body brute seq] 4 step
+Simulation step time: 0.147516 s
+Simulation time: 0.790639 s
+
+[N body BH seq] 0 step
+Tree building time: 0.001316 s
+Simulation step time: 0.132297 s
+Tree deleting time: 0.000289 s
+[N body BH seq] 1 step
+Tree building time: 0.000917 s
+Simulation step time: 0.136411 s
+Tree deleting time: 0.000349 s
+[N body BH seq] 2 step
+Tree building time: 0.000944 s
+Simulation step time: 0.137268 s
+Tree deleting time: 0.000365 s
+[N body BH seq] 3 step
+Tree building time: 0.000959 s
+Simulation step time: 0.139405 s
+Tree deleting time: 0.000384 s
+[N body BH seq] 4 step
+Tree building time: 0.000932 s
+Simulation step time: 0.139711 s
+Tree deleting time: 0.000426 s
+Simulation time: 0.692022 s
+
+---------------------------------------------------------------
+
+bodies count: 10000
+initialization time: 0.00735 s
+
+[N body brute seq] 0 step
+Simulation step time: 15.5302 s
+[N body brute seq] 1 step
+Simulation step time: 15.7752 s
+[N body brute seq] 2 step
+Simulation step time: 15.7909 s
+[N body brute seq] 3 step
+Simulation step time: 15.821 s
+[N body brute seq] 4 step
+Simulation step time: 18.2046 s
+Simulation time: 81.1221 s
+
+[N body BH seq] 0 step
+Tree building time: 0.019524 s
+Simulation step time: 4.83655 s
+Tree deleting time: 0.006424 s
+[N body BH seq] 1 step
+Tree building time: 0.018328 s
+Simulation step time: 4.54888 s
+Tree deleting time: 0.01124 s
+[N body BH seq] 2 step
+Tree building time: 0.018143 s
+Simulation step time: 4.82505 s
+Tree deleting time: 0.012982 s
+[N body BH seq] 3 step
+Tree building time: 0.020447 s
+Simulation step time: 4.87169 s
+Tree deleting time: 0.014545 s
+[N body BH seq] 4 step
+Tree building time: 0.022398 s
+Simulation step time: 4.83626 s
+Tree deleting time: 0.014832 s
+Simulation time: 24.0775 s
+
+---------------------------------------------------------------
+
+bodies count: 100000
+initialization time: 0.077833 s
+
+[N body brute seq] 0 step
+Simulation step time: 1898.08 s
+[N body brute seq] 1 step
+Simulation step time: 1837.18 s
+[N body brute seq] 2 step
+Simulation step time: 1828.05 s
+[N body brute seq] 3 step
+Simulation step time: 1833.96 s
+[N body brute seq] 4 step
+Simulation step time: 1834.04 s
+Simulation time: 9231.32 s
+
+[N body BH seq] 0 step
+Tree building time: 0.244812 s
+Simulation step time: 88.0831 s
+Tree deleting time: 0.074669 s
+[N body BH seq] 1 step
+Tree building time: 0.268905 s
+Simulation step time: 98.3087 s
+Tree deleting time: 0.124746 s
+[N body BH seq] 2 step
+Tree building time: 0.246123 s
+Simulation step time: 106.95 s
+Tree deleting time: 0.132611 s
+[N body BH seq] 3 step
+Tree building time: 0.237784 s
+Simulation step time: 118.117 s
+Tree deleting time: 0.148006 s
+[N body BH seq] 4 step
+Tree building time: 0.262025 s
+Simulation step time: 130.577 s
+Tree deleting time: 0.144495 s
+Simulation time: 543.921 s
+
+
+cycle #1
+---------------------------------------------------------------
+
+bodies count: 10
+initialization time: 1.9e-05 s
+
+[N body brute seq] 0 step
+Simulation step time: 2.4e-05 s
+[N body brute seq] 1 step
+Simulation step time: 2e-05 s
+[N body brute seq] 2 step
+Simulation step time: 1.8e-05 s
+[N body brute seq] 3 step
+Simulation step time: 1.8e-05 s
+[N body brute seq] 4 step
+Simulation step time: 1.7e-05 s
+Simulation time: 0.000104 s
+
+[N body BH seq] 0 step
+Tree building time: 1.4e-05 s
+Simulation step time: 3.1e-05 s
+Tree deleting time: 3e-06 s
+[N body BH seq] 1 step
+Tree building time: 8e-06 s
+Simulation step time: 2.9e-05 s
+Tree deleting time: 3e-06 s
+[N body BH seq] 2 step
+Tree building time: 7e-06 s
+Simulation step time: 3e-05 s
+Tree deleting time: 2e-06 s
+[N body BH seq] 3 step
+Tree building time: 7e-06 s
+Simulation step time: 2.9e-05 s
+Tree deleting time: 3e-06 s
+[N body BH seq] 4 step
+Tree building time: 7e-06 s
+Simulation step time: 2.9e-05 s
+Tree deleting time: 3e-06 s
+Simulation time: 0.000223 s
+
+---------------------------------------------------------------
+
+bodies count: 100
+initialization time: 7.4e-05 s
+
+[N body brute seq] 0 step
+Simulation step time: 0.001594 s
+[N body brute seq] 1 step
+Simulation step time: 0.001597 s
+[N body brute seq] 2 step
+Simulation step time: 0.001592 s
+[N body brute seq] 3 step
+Simulation step time: 0.001594 s
+[N body brute seq] 4 step
+Simulation step time: 0.001591 s
+Simulation time: 0.007976 s
+
+[N body BH seq] 0 step
+Tree building time: 0.000125 s
+Simulation step time: 0.002387 s
+Tree deleting time: 3.5e-05 s
+[N body BH seq] 1 step
+Tree building time: 7.7e-05 s
+Simulation step time: 0.002386 s
+Tree deleting time: 2.8e-05 s
+[N body BH seq] 2 step
+Tree building time: 8.1e-05 s
+Simulation step time: 0.002394 s
+Tree deleting time: 2.7e-05 s
+[N body BH seq] 3 step
+Tree building time: 8.1e-05 s
+Simulation step time: 0.002396 s
+Tree deleting time: 3.1e-05 s
+[N body BH seq] 4 step
+Tree building time: 7.9e-05 s
+Simulation step time: 0.002395 s
+Tree deleting time: 3e-05 s
+Simulation time: 0.012573 s
+
+---------------------------------------------------------------
+
+bodies count: 1000
+initialization time: 0.000765 s
+
+[N body brute seq] 0 step
+Simulation step time: 0.149197 s
+[N body brute seq] 1 step
+Simulation step time: 0.153144 s
+[N body brute seq] 2 step
+Simulation step time: 0.147313 s
+[N body brute seq] 3 step
+Simulation step time: 0.147435 s
+[N body brute seq] 4 step
+Simulation step time: 0.14752 s
+Simulation time: 0.744627 s
+
+[N body BH seq] 0 step
+Tree building time: 0.001243 s
+Simulation step time: 0.132444 s
+Tree deleting time: 0.000259 s
+[N body BH seq] 1 step
+Tree building time: 0.00092 s
+Simulation step time: 0.13726 s
+Tree deleting time: 0.000402 s
+[N body BH seq] 2 step
+Tree building time: 0.000899 s
+Simulation step time: 0.137829 s
+Tree deleting time: 0.000339 s
+[N body BH seq] 3 step
+Tree building time: 0.000906 s
+Simulation step time: 0.148632 s
+Tree deleting time: 0.000433 s
+[N body BH seq] 4 step
+Tree building time: 0.001053 s
+Simulation step time: 0.160028 s
+Tree deleting time: 0.000412 s
+Simulation time: 0.723117 s
+
+---------------------------------------------------------------
+
+bodies count: 10000
+initialization time: 0.008487 s
+
+[N body brute seq] 0 step
+Simulation step time: 19.4059 s
+[N body brute seq] 1 step
+Simulation step time: 17.9482 s
+[N body brute seq] 2 step
+Simulation step time: 17.9009 s
+[N body brute seq] 3 step
+Simulation step time: 18.0777 s
+[N body brute seq] 4 step
+Simulation step time: 18.1492 s
+Simulation time: 91.482 s
+
+[N body BH seq] 0 step
+Tree building time: 0.019475 s
+Simulation step time: 4.69973 s
+Tree deleting time: 0.006725 s
+[N body BH seq] 1 step
+Tree building time: 0.020371 s
+Simulation step time: 5.25855 s
+Tree deleting time: 0.011166 s
+[N body BH seq] 2 step
+Tree building time: 0.020155 s
+Simulation step time: 5.50652 s
+Tree deleting time: 0.013436 s
+[N body BH seq] 3 step
+Tree building time: 0.022602 s
+Simulation step time: 5.30949 s
+Tree deleting time: 0.014705 s
+[N body BH seq] 4 step
+Tree building time: 0.023388 s
+Simulation step time: 5.66129 s
+Tree deleting time: 0.014624 s
+Simulation time: 26.6024 s
+
+---------------------------------------------------------------
+
+bodies count: 100000
+initialization time: 0.087467 s
+
+[N body brute seq] 0 step
+Simulation step time: 1833.85 s
+[N body brute seq] 1 step
+Simulation step time: 1813.14 s
+[N body brute seq] 2 step
+Simulation step time: 1834.4 s
+[N body brute seq] 3 step
+Simulation step time: 1834.16 s
+[N body brute seq] 4 step
+Simulation step time: 1834.32 s
+Simulation time: 9149.87 s
+
+[N body BH seq] 0 step
+Tree building time: 0.242228 s
+Simulation step time: 89.2548 s
+Tree deleting time: 0.076451 s
+[N body BH seq] 1 step
+Tree building time: 0.27647 s
+Simulation step time: 97.0332 s
+Tree deleting time: 0.12469 s
+[N body BH seq] 2 step
+Tree building time: 0.271211 s
+Simulation step time: 103.193 s
+Tree deleting time: 0.142848 s
+[N body BH seq] 3 step
+Tree building time: 0.279044 s
+Simulation step time: 121.945 s
+Tree deleting time: 0.151335 s
+[N body BH seq] 4 step
+Tree building time: 0.274257 s
+Simulation step time: 135.046 s
+Tree deleting time: 0.151264 s
+Simulation time: 548.463 s
+
+
+cycle #2
+---------------------------------------------------------------
+
+bodies count: 10
+initialization time: 1.2e-05 s
+
+[N body brute seq] 0 step
+Simulation step time: 2.7e-05 s
+[N body brute seq] 1 step
+Simulation step time: 2.2e-05 s
+[N body brute seq] 2 step
+Simulation step time: 1.9e-05 s
+[N body brute seq] 3 step
+Simulation step time: 1.9e-05 s
+[N body brute seq] 4 step
+Simulation step time: 1.8e-05 s
+Simulation time: 0.000111 s
+
+[N body BH seq] 0 step
+Tree building time: 1.3e-05 s
+Simulation step time: 3.4e-05 s
+Tree deleting time: 4e-06 s
+[N body BH seq] 1 step
+Tree building time: 1.1e-05 s
+Simulation step time: 3.4e-05 s
+Tree deleting time: 3e-06 s
+[N body BH seq] 2 step
+Tree building time: 9e-06 s
+Simulation step time: 3.3e-05 s
+Tree deleting time: 4e-06 s
+[N body BH seq] 3 step
+Tree building time: 9e-06 s
+Simulation step time: 3.3e-05 s
+Tree deleting time: 4e-06 s
+[N body BH seq] 4 step
+Tree building time: 9e-06 s
+Simulation step time: 3.3e-05 s
+Tree deleting time: 4e-06 s
+Simulation time: 0.000255 s
+
+---------------------------------------------------------------
+
+bodies count: 100
+initialization time: 8.1e-05 s
+
+[N body brute seq] 0 step
+Simulation step time: 0.001703 s
+[N body brute seq] 1 step
+Simulation step time: 0.00171 s
+[N body brute seq] 2 step
+Simulation step time: 0.001699 s
+[N body brute seq] 3 step
+Simulation step time: 0.001702 s
+[N body brute seq] 4 step
+Simulation step time: 0.001716 s
+Simulation time: 0.008537 s
+
+[N body BH seq] 0 step
+Tree building time: 0.000111 s
+Simulation step time: 0.002623 s
+Tree deleting time: 3.1e-05 s
+[N body BH seq] 1 step
+Tree building time: 0.000102 s
+Simulation step time: 0.002623 s
+Tree deleting time: 3.2e-05 s
+[N body BH seq] 2 step
+Tree building time: 0.000101 s
+Simulation step time: 0.002634 s
+Tree deleting time: 3.2e-05 s
+[N body BH seq] 3 step
+Tree building time: 9.8e-05 s
+Simulation step time: 0.002633 s
+Tree deleting time: 3.3e-05 s
+[N body BH seq] 4 step
+Tree building time: 0.000101 s
+Simulation step time: 0.00263 s
+Tree deleting time: 3.3e-05 s
+Simulation time: 0.01384 s
+
+---------------------------------------------------------------
+
+bodies count: 1000
+initialization time: 0.000851 s
+
+[N body brute seq] 0 step
+Simulation step time: 0.169421 s
+[N body brute seq] 1 step
+Simulation step time: 0.169587 s
+[N body brute seq] 2 step
+Simulation step time: 0.169527 s
+[N body brute seq] 3 step
+Simulation step time: 0.169524 s
+[N body brute seq] 4 step
+Simulation step time: 0.169439 s
+Simulation time: 0.847515 s
+
+[N body BH seq] 0 step
+Tree building time: 0.001189 s
+Simulation step time: 0.153917 s
+Tree deleting time: 0.000302 s
+[N body BH seq] 1 step
+Tree building time: 0.001021 s
+Simulation step time: 0.158481 s
+Tree deleting time: 0.000375 s
+[N body BH seq] 2 step
+Tree building time: 0.001054 s
+Simulation step time: 0.15995 s
+Tree deleting time: 0.000399 s
+[N body BH seq] 3 step
+Tree building time: 0.001047 s
+Simulation step time: 0.161802 s
+Tree deleting time: 0.000444 s
+[N body BH seq] 4 step
+Tree building time: 0.001043 s
+Simulation step time: 0.162063 s
+Tree deleting time: 0.000424 s
+Simulation time: 0.803561 s
+
+---------------------------------------------------------------
+
+bodies count: 10000
+initialization time: 0.00847 s
+
+[N body brute seq] 0 step
+Simulation step time: 17.9795 s
+[N body brute seq] 1 step
+Simulation step time: 18.1464 s
+[N body brute seq] 2 step
+Simulation step time: 18.0431 s
+[N body brute seq] 3 step
+Simulation step time: 17.9012 s
+[N body brute seq] 4 step
+Simulation step time: 17.9809 s
+Simulation time: 90.0513 s
+
+[N body BH seq] 0 step
+Tree building time: 0.019484 s
+Simulation step time: 4.98429 s
+Tree deleting time: 0.006384 s
+[N body BH seq] 1 step
+Tree building time: 0.017485 s
+Simulation step time: 5.24025 s
+Tree deleting time: 0.011672 s
+[N body BH seq] 2 step
+Tree building time: 0.022569 s
+Simulation step time: 4.99506 s
+Tree deleting time: 0.012546 s
+[N body BH seq] 3 step
+Tree building time: 0.021932 s
+Simulation step time: 5.71479 s
+Tree deleting time: 0.014067 s
+[N body BH seq] 4 step
+Tree building time: 0.022268 s
+Simulation step time: 5.64384 s
+Tree deleting time: 0.015052 s
+Simulation time: 26.7419 s
+
+---------------------------------------------------------------
+
+bodies count: 100000
+initialization time: 0.098784 s
+
+[N body brute seq] 0 step
+Simulation step time: 1834.13 s
+[N body brute seq] 1 step
+Simulation step time: 1834.11 s
+[N body brute seq] 2 step
+Simulation step time: 1819.67 s
+[N body brute seq] 3 step
+Simulation step time: 1838.64 s
+[N body brute seq] 4 step
+Simulation step time: 1834.07 s
+Simulation time: 9160.62 s
+
+[N body BH seq] 0 step
+Tree building time: 0.242996 s
+Simulation step time: 89.15 s
+Tree deleting time: 0.076633 s
+[N body BH seq] 1 step
+Tree building time: 0.265908 s
+Simulation step time: 97.2395 s
+Tree deleting time: 0.122177 s
+[N body BH seq] 2 step
+Tree building time: 0.25009 s
+Simulation step time: 102.288 s
+Tree deleting time: 0.141222 s
+[N body BH seq] 3 step
+Tree building time: 0.256543 s
+Simulation step time: 115.624 s
+Tree deleting time: 0.152343 s
+[N body BH seq] 4 step
+Tree building time: 0.273325 s
+Simulation step time: 127.487 s
+Tree deleting time: 0.150041 s
+Simulation time: 533.72 s
+
+
+cycle #3
+---------------------------------------------------------------
+
+bodies count: 10
+initialization time: 1.3e-05 s
+
+[N body brute seq] 0 step
+Simulation step time: 2.6e-05 s
+[N body brute seq] 1 step
+Simulation step time: 2.1e-05 s
+[N body brute seq] 2 step
+Simulation step time: 1.9e-05 s
+[N body brute seq] 3 step
+Simulation step time: 1.8e-05 s
+[N body brute seq] 4 step
+Simulation step time: 1.9e-05 s
+Simulation time: 0.000111 s
+
+[N body BH seq] 0 step
+Tree building time: 1.3e-05 s
+Simulation step time: 3.6e-05 s
+Tree deleting time: 4e-06 s
+[N body BH seq] 1 step
+Tree building time: 1e-05 s
+Simulation step time: 3.6e-05 s
+Tree deleting time: 3e-06 s
+[N body BH seq] 2 step
+Tree building time: 1e-05 s
+Simulation step time: 3.5e-05 s
+Tree deleting time: 3e-06 s
+[N body BH seq] 3 step
+Tree building time: 1e-05 s
+Simulation step time: 3.5e-05 s
+Tree deleting time: 4e-06 s
+[N body BH seq] 4 step
+Tree building time: 1e-05 s
+Simulation step time: 3.5e-05 s
+Tree deleting time: 4e-06 s
+Simulation time: 0.000267 s
+
+---------------------------------------------------------------
+
+bodies count: 100
+initialization time: 8.9e-05 s
+
+[N body brute seq] 0 step
+Simulation step time: 0.001703 s
+[N body brute seq] 1 step
+Simulation step time: 0.001747 s
+[N body brute seq] 2 step
+Simulation step time: 0.001701 s
+[N body brute seq] 3 step
+Simulation step time: 0.001711 s
+[N body brute seq] 4 step
+Simulation step time: 0.001711 s
+Simulation time: 0.008582 s
+
+[N body BH seq] 0 step
+Tree building time: 0.000109 s
+Simulation step time: 0.002683 s
+Tree deleting time: 3.2e-05 s
+[N body BH seq] 1 step
+Tree building time: 9.8e-05 s
+Simulation step time: 0.002701 s
+Tree deleting time: 3.3e-05 s
+[N body BH seq] 2 step
+Tree building time: 9.7e-05 s
+Simulation step time: 0.002691 s
+Tree deleting time: 3e-05 s
+[N body BH seq] 3 step
+Tree building time: 9.8e-05 s
+Simulation step time: 0.002695 s
+Tree deleting time: 3.1e-05 s
+[N body BH seq] 4 step
+Tree building time: 9.5e-05 s
+Simulation step time: 0.002688 s
+Tree deleting time: 3.3e-05 s
+Simulation time: 0.014138 s
+
+---------------------------------------------------------------
+
+bodies count: 1000
+initialization time: 0.000839 s
+
+[N body brute seq] 0 step
+Simulation step time: 0.169505 s
+[N body brute seq] 1 step
+Simulation step time: 0.169561 s
+[N body brute seq] 2 step
+Simulation step time: 0.16964 s
+[N body brute seq] 3 step
+Simulation step time: 0.169442 s
+[N body brute seq] 4 step
+Simulation step time: 0.169503 s
+Simulation time: 0.84767 s
+
+[N body BH seq] 0 step
+Tree building time: 0.001243 s
+Simulation step time: 0.151047 s
+Tree deleting time: 0.000337 s
+[N body BH seq] 1 step
+Tree building time: 0.001075 s
+Simulation step time: 0.155588 s
+Tree deleting time: 0.00038 s
+[N body BH seq] 2 step
+Tree building time: 0.001109 s
+Simulation step time: 0.157726 s
+Tree deleting time: 0.000545 s
+[N body BH seq] 3 step
+Tree building time: 0.001126 s
+Simulation step time: 0.165311 s
+Tree deleting time: 0.000427 s
+[N body BH seq] 4 step
+Tree building time: 0.001168 s
+Simulation step time: 0.166184 s
+Tree deleting time: 0.000423 s
+Simulation time: 0.803751 s
+
+---------------------------------------------------------------
+
+bodies count: 10000
+initialization time: 0.008461 s
+
+[N body brute seq] 0 step
+Simulation step time: 18.1464 s
+[N body brute seq] 1 step
+Simulation step time: 18.1306 s
+[N body brute seq] 2 step
+Simulation step time: 17.9053 s
+[N body brute seq] 3 step
+Simulation step time: 17.9099 s
+[N body brute seq] 4 step
+Simulation step time: 18.1538 s
+Simulation time: 90.2461 s
+
+[N body BH seq] 0 step
+Tree building time: 0.019523 s
+Simulation step time: 4.83078 s
+Tree deleting time: 0.006222 s
+[N body BH seq] 1 step
+Tree building time: 0.017642 s
+Simulation step time: 5.37231 s
+Tree deleting time: 0.011126 s
+[N body BH seq] 2 step
+Tree building time: 0.018618 s
+Simulation step time: 4.92321 s
+Tree deleting time: 0.013288 s
+[N body BH seq] 3 step
+Tree building time: 0.022656 s
+Simulation step time: 5.30193 s
+Tree deleting time: 0.014127 s
+[N body BH seq] 4 step
+Tree building time: 0.021373 s
+Simulation step time: 5.56599 s
+Tree deleting time: 0.014235 s
+Simulation time: 26.1533 s
+
+---------------------------------------------------------------
+
+bodies count: 100000
+initialization time: 0.087592 s
+
+[N body brute seq] 0 step
+Simulation step time: 1816.65 s
+[N body brute seq] 1 step
+Simulation step time: 1812.5 s
+[N body brute seq] 2 step
+Simulation step time: 1835.48 s
+[N body brute seq] 3 step
+Simulation step time: 1833.93 s
+[N body brute seq] 4 step
+Simulation step time: 1834.03 s
+Simulation time: 9132.59 s
+
+[N body BH seq] 0 step
+Tree building time: 0.243184 s
+Simulation step time: 89.0714 s
+Tree deleting time: 0.076799 s
+[N body BH seq] 1 step
+Tree building time: 0.26801 s
+Simulation step time: 92.241 s
+Tree deleting time: 0.120223 s
+[N body BH seq] 2 step
+Tree building time: 0.249385 s
+Simulation step time: 108.448 s
+Tree deleting time: 0.137999 s
+[N body BH seq] 3 step
+Tree building time: 0.256993 s
+Simulation step time: 113.773 s
+Tree deleting time: 0.151916 s
+[N body BH seq] 4 step
+Tree building time: 0.267622 s
+Simulation step time: 131.723 s
+Tree deleting time: 0.154521 s
+Simulation time: 537.184 s
+
+
+cycle #4
+---------------------------------------------------------------
+
+bodies count: 10
+initialization time: 1.2e-05 s
+
+[N body brute seq] 0 step
+Simulation step time: 2.7e-05 s
+[N body brute seq] 1 step
+Simulation step time: 2.3e-05 s
+[N body brute seq] 2 step
+Simulation step time: 2.1e-05 s
+[N body brute seq] 3 step
+Simulation step time: 2.1e-05 s
+[N body brute seq] 4 step
+Simulation step time: 2e-05 s
+Simulation time: 0.00012 s
+
+[N body BH seq] 0 step
+Tree building time: 1.1e-05 s
+Simulation step time: 3.3e-05 s
+Tree deleting time: 3e-06 s
+[N body BH seq] 1 step
+Tree building time: 8e-06 s
+Simulation step time: 3.2e-05 s
+Tree deleting time: 2e-06 s
+[N body BH seq] 2 step
+Tree building time: 7e-06 s
+Simulation step time: 3.3e-05 s
+Tree deleting time: 2e-06 s
+[N body BH seq] 3 step
+Tree building time: 8e-06 s
+Simulation step time: 3.2e-05 s
+Tree deleting time: 2e-06 s
+[N body BH seq] 4 step
+Tree building time: 7e-06 s
+Simulation step time: 3.2e-05 s
+Tree deleting time: 2e-06 s
+Simulation time: 0.000232 s
+
+---------------------------------------------------------------
+
+bodies count: 100
+initialization time: 9.6e-05 s
+
+[N body brute seq] 0 step
+Simulation step time: 0.001816 s
+[N body brute seq] 1 step
+Simulation step time: 0.001777 s
+[N body brute seq] 2 step
+Simulation step time: 0.00181 s
+[N body brute seq] 3 step
+Simulation step time: 0.00177 s
+[N body brute seq] 4 step
+Simulation step time: 0.001769 s
+Simulation time: 0.008952 s
+
+[N body BH seq] 0 step
+Tree building time: 0.000114 s
+Simulation step time: 0.002702 s
+Tree deleting time: 3.4e-05 s
+[N body BH seq] 1 step
+Tree building time: 9.7e-05 s
+Simulation step time: 0.002696 s
+Tree deleting time: 3.5e-05 s
+[N body BH seq] 2 step
+Tree building time: 9.6e-05 s
+Simulation step time: 0.002476 s
+Tree deleting time: 3.1e-05 s
+[N body BH seq] 3 step
+Tree building time: 9.1e-05 s
+Simulation step time: 0.002421 s
+Tree deleting time: 3.3e-05 s
+[N body BH seq] 4 step
+Tree building time: 9.3e-05 s
+Simulation step time: 0.002418 s
+Tree deleting time: 3.2e-05 s
+Simulation time: 0.013391 s
+
+---------------------------------------------------------------
+
+bodies count: 1000
+initialization time: 0.000788 s
+
+[N body brute seq] 0 step
+Simulation step time: 0.150108 s
+[N body brute seq] 1 step
+Simulation step time: 0.147636 s
+[N body brute seq] 2 step
+Simulation step time: 0.147494 s
+[N body brute seq] 3 step
+Simulation step time: 0.147427 s
+[N body brute seq] 4 step
+Simulation step time: 0.147422 s
+Simulation time: 0.740109 s
+
+[N body BH seq] 0 step
+Tree building time: 0.001065 s
+Simulation step time: 0.130358 s
+Tree deleting time: 0.000287 s
+[N body BH seq] 1 step
+Tree building time: 0.000954 s
+Simulation step time: 0.134492 s
+Tree deleting time: 0.000344 s
+[N body BH seq] 2 step
+Tree building time: 0.000942 s
+Simulation step time: 0.135321 s
+Tree deleting time: 0.00034 s
+[N body BH seq] 3 step
+Tree building time: 0.000936 s
+Simulation step time: 0.13807 s
+Tree deleting time: 0.000394 s
+[N body BH seq] 4 step
+Tree building time: 0.000927 s
+Simulation step time: 0.139933 s
+Tree deleting time: 0.000408 s
+Simulation time: 0.684819 s
+
+---------------------------------------------------------------
+
+bodies count: 10000
+initialization time: 0.007513 s
+
+[N body brute seq] 0 step
+Simulation step time: 18.646 s
+[N body brute seq] 1 step
+Simulation step time: 18.0035 s
+[N body brute seq] 2 step
+Simulation step time: 19.5398 s
+[N body brute seq] 3 step
+Simulation step time: 16.5379 s
+[N body brute seq] 4 step
+Simulation step time: 15.7835 s
+Simulation time: 88.5108 s
+
+[N body BH seq] 0 step
+Tree building time: 0.017529 s
+Simulation step time: 5.21183 s
+Tree deleting time: 0.008881 s
+[N body BH seq] 1 step
+Tree building time: 0.025586 s
+Simulation step time: 5.40672 s
+Tree deleting time: 0.011205 s
+[N body BH seq] 2 step
+Tree building time: 0.019048 s
+Simulation step time: 4.76098 s
+Tree deleting time: 0.012888 s
+[N body BH seq] 3 step
+Tree building time: 0.020998 s
+Simulation step time: 4.6192 s
+Tree deleting time: 0.014233 s
+[N body BH seq] 4 step
+Tree building time: 0.021829 s
+Simulation step time: 5.07818 s
+Tree deleting time: 0.014573 s
+Simulation time: 25.2439 s
+
+---------------------------------------------------------------
+
+bodies count: 100000
+initialization time: 0.078721 s
+
+[N body brute seq] 0 step
+Simulation step time: 1790 s
+[N body brute seq] 1 step
+Simulation step time: 1817.08 s
+[N body brute seq] 2 step
+Simulation step time: 1686.93 s
+[N body brute seq] 3 step
+Simulation step time: 1835.09 s
+[N body brute seq] 4 step
+Simulation step time: 1642.75 s
+Simulation time: 8771.85 s
+
+[N body BH seq] 0 step
+Tree building time: 0.205614 s
+Simulation step time: 82.9095 s
+Tree deleting time: 0.072931 s
+[N body BH seq] 1 step
+Tree building time: 0.251367 s
+Simulation step time: 86.9144 s
+Tree deleting time: 0.132389 s
+[N body BH seq] 2 step
+Tree building time: 0.27129 s
+Simulation step time: 107.544 s
+Tree deleting time: 0.142026 s
+[N body BH seq] 3 step
+Tree building time: 0.260195 s
+Simulation step time: 111.016 s
+Tree deleting time: 0.151263 s
+[N body BH seq] 4 step
+Tree building time: 0.263892 s
+Simulation step time: 123.743 s
+Tree deleting time: 0.145544 s
+Simulation time: 514.024 s
+
+
