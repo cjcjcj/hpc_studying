@@ -1,4 +1,4 @@
-#include "approaches.h"
+#include "sequential.h"
 #include "bhtree.h"
 #include "general.h"
 #include "float3.h"
