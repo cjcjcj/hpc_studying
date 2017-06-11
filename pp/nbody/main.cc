@@ -1,6 +1,6 @@
 #include "float3.h"
 #include "body.h"
-#include "approaches.h"
+#include "sequential.h"
 #include "general.h"
 
 #include <cmath>
