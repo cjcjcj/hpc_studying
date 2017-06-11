@@ -68,14 +68,14 @@ void sequential(int nbodies, int simulation_steps, float r_sphere=4000, float mi
 int main()
 {
     const int
+        max_pow = 5,
         simulation_steps = 5,
-        max_pow = 3,
         repeats = 5;
 
     for (int repeat = 0; repeat < repeats; repeat++)
     {
         std::cout << "cycle #" << repeat << std::endl;
-        for(int pow=1; pow <= max_pow; pow++)
+        for(int pow = 1; pow <= max_pow; pow++)
             sequential(std::pow(10, pow), simulation_steps);
         std::cout << std::endl;
     }
