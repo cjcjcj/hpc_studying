@@ -10,4 +10,5 @@ const float SOFTENING_E = 0.01f;
 float rand(float r);
 float rand(float l, float r);
 
+float3 get_onsphere_point(float r);
 float3 body_body_iteraction(const Body*, const Body*);
