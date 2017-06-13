@@ -342,7 +342,7 @@ namespace omp
     void nbody_nn_step(std::vector<Body*>& bodies, float delta)
     {
         const int n = bodies.size();
-        float3 accelerations[n];
+        std::vector<float3> accelerations(n);
 
         float3 ai;
         #pragma omp parallel shared(bodies, accelerations)
@@ -367,6 +367,29 @@ namespace omp
         }
     }
 
+
+    void nbody_bh_step(std::vector<Body*>& bodies, BHTree* btree, float delta)
+    {
+        const int n = bodies.size();
+        std::vector<float3> accelerations(n);
+
+        #pragma omp parallel shared(bodies, accelerations)
+        {
+            #pragma omp for
+            for(int i = 0; i < n; i++)
+            {
+                accelerations[i] = btree->get_acceleration_for_body(bodies[i]);
+            }
+
+            #pragma omp for
+            for(int i = 0; i < n; i++)
+            {
+                bodies[i]->velocity += accelerations[i] * delta;
+                bodies[i]->position += bodies[i]->velocity * delta;
+            }
+        }
+    }
+
     void nbody_nn(std::vector<Body*>& bodies, int steps_count, float delta=1)
     {
         double start, end;
@@ -376,26 +399,6 @@ namespace omp
             start = omp_get_wtime(); nbody_nn_step(bodies, delta); end = omp_get_wtime();
             std::cout <<"[nn]#" << i << " Simulation step time: " << end - start << " s\n";
         }    
-    }
-
-
-    void nbody_bh_step(std::vector<Body*>& bodies, BHTree* btree, float delta)
-    {
-        int i = 0;
-        const int n = bodies.size();
-        float3 accelerations[n], ai;
-        for(const auto b: bodies)
-        {
-            accelerations[i++] = btree->get_acceleration_for_body(b);
-            ai.clear();
-        }
-
-        // update positions, velocities, ceterka
-        for(i = 0; i < n; i++)
-        {
-            bodies[i]->velocity += accelerations[i] * delta;
-            bodies[i]->position += bodies[i]->velocity * delta;
-        }
     }
 
     void nbody_bh(std::vector<Body*>& bodies, int steps_count, float delta=1)
@@ -415,12 +418,12 @@ namespace omp
     void simulate(int nbodies, int simulation_steps, float r_sphere, float min_m, float max_m)
     {
         std::cout << "---------------------------------------------------------------\n\n";
-        std::clock_t    start, end;
+        double start, end;
         std::vector<Body*> bodies_a(nbodies), bodies_b(nbodies);
         
         float3 position, velocity;
         float m;
-        start = std::clock();
+        start = omp_get_wtime();
         for(int i = 0; i < nbodies; i++)
         {
             position = get_onsphere_point(r_sphere);
@@ -430,27 +433,26 @@ namespace omp
             bodies_a[i] = new Body(position, velocity, m);
             bodies_b[i] = new Body(position, velocity, m);
         }
-        end = std::clock();
+        end = omp_get_wtime();
         std::cout 
                   << "bodies count: " << nbodies << std::endl
                   << "initialization time: " << (end - start) / (double)(CLOCKS_PER_SEC) << " s\n\n";
 
         // brute
-        double t1, t2;
-        t1=omp_get_wtime(); nbody_nn(bodies_a, simulation_steps); t2=omp_get_wtime();
-        std::cout << "Simulation time: " << t2-t1 << " s\n\n";
+        start=omp_get_wtime(); nbody_nn(bodies_a, simulation_steps); end=omp_get_wtime();
+        std::cout << "Simulation time: " << end - start << " s\n\n";
         for(auto bi: bodies_a)
         {
             delete bi;
         }
 
-        // // bh
-        // start = std::clock(); nbody_bh(bodies_b, simulation_steps); end = std::clock();
-        // std::cout << "Simulation time: " << (end - start) / (double)(CLOCKS_PER_SEC) << " s\n\n";
-        // for(auto bi: bodies_b)
-        // {
-        //     delete bi;
-        // }
+        // bh
+        start = omp_get_wtime(); nbody_bh(bodies_b, simulation_steps); end = omp_get_wtime();
+        std::cout << "Simulation time: " << end - start << " s\n\n";
+        for(auto bi: bodies_b)
+        {
+            delete bi;
+        }
     }
 }
 
