@@ -12,6 +12,9 @@
 
 #include <thread>
 #include <future>
+#include <chrono>
+
+#include <omp.h>
 
 
 BHTree* build_tree(std::vector<Body*>& bodies)
@@ -69,7 +72,7 @@ namespace sequential
         }
     }
 
-    void nbody_nn(std::vector<Body*>& bodies, int steps_count, float delta)
+    void nbody_nn(std::vector<Body*>& bodies, int steps_count, float delta=1)
     {
         std::clock_t start, end;
 
@@ -100,7 +103,7 @@ namespace sequential
         }
     }
 
-    void nbody_bh(std::vector<Body*>& bodies, int steps_count, float delta)
+    void nbody_bh(std::vector<Body*>& bodies, int steps_count, float delta=1)
     {
         std::clock_t start, end;
         BHTree* btree;
@@ -160,7 +163,7 @@ namespace sequential
 
 namespace stdthread
 {
-    const int THREADS_COUNT = 2;
+    const int THREADS_COUNT = std::thread::hardware_concurrency();
     void calculate_acceleration(std::vector<Body*>& bodies, std::vector<float3>& accelerations, int first, int last)
     {
         for(int i = first; i < last; i++)
@@ -172,33 +175,56 @@ namespace stdthread
 
     void nbody_nn_step(std::vector<Body*>& bodies, float delta)
     {
+        std::cout << THREADS_COUNT;
         int n = bodies.size();
         std::vector<float3> accelerations(n);
 
-        std::vector<std::future<void>> promises;
+        std::vector<std::thread> threads;
         int step_size = n/THREADS_COUNT;
 
         for(int i = 0; i < THREADS_COUNT; i++)
-            promises.push_back(
-                std::async(
-                    std::launch::async,
+            threads.push_back(
+                std::thread(
                     calculate_acceleration, std::ref(bodies), std::ref(accelerations),
                     i*step_size, (i+1)*step_size
                 )
             );
 
-        for(auto& p: promises)
-            p.get();
+        for(auto& t: threads)
+            t.join();
+
+        threads.clear();
+
+        int l, r;
+        for(int i = 0; i < THREADS_COUNT; i++)
+        {
+            int l = i*step_size, r = (i+1)*step_size;
+            threads.push_back(
+                std::thread(
+                    [&accelerations, &bodies, l, r, delta]() -> void
+                    {
+                        for(int i = l; i < r; i++)
+                        {
+                            bodies[i]->velocity += accelerations[i] * delta;
+                            bodies[i]->position += bodies[i]->velocity * delta;
+                        }
+                    }
+                )
+            );
+        }
 
         // update positions, velocities, ceterka
-        for(int i = 0; i < n; i++)
-        {
-            bodies[i]->velocity += accelerations[i] * delta;
-            bodies[i]->position += bodies[i]->velocity * delta;
-        }
+        // for(int i = 0; i < n; i++)
+        // {
+        //     bodies[i]->velocity += accelerations[i] * delta;
+        //     bodies[i]->position += bodies[i]->velocity * delta;
+        // }
+
+        for(auto& t: threads)
+            t.join();
     }
 
-    void nbody_nn(std::vector<Body*>& bodies, int steps_count, float delta)
+    void nbody_nn(std::vector<Body*>& bodies, int steps_count, float delta=1)
     {
         std::clock_t start, end;
 
@@ -229,17 +255,133 @@ namespace stdthread
         }
     }
 
-    void nbody_bh(std::vector<Body*>& bodies, int steps_count, float delta)
+    void nbody_bh(std::vector<Body*>& bodies, int steps_count, float delta=1)
     {
-        std::clock_t start, end;
+        std::chrono::steady_clock::time_point start, end;
         BHTree* btree;
 
         for(int i = 0; i < steps_count; i++)
         {
             btree = build_tree(bodies);
-            start = std::clock(); nbody_bh_step(bodies, btree, delta); end = std::clock();
+            start = std::chrono::steady_clock::now(); nbody_bh_step(bodies, btree, delta); end = std::chrono::steady_clock::now();
             delete btree;
-            std::cout << "[bh]#" << i << " Simulation step time: " << (end - start) / (double)(CLOCKS_PER_SEC) << " s\n";
+            auto time_span = std::chrono::duration_cast<std::chrono::seconds>(end - start);
+            std::cout << "[bh]#" << i << " Simulation step time: " << time_span.count() << " s\n";
+        }
+    }
+
+    void simulate(int nbodies, int simulation_steps, float r_sphere, float min_m, float max_m)
+    {
+        std::cout << "---------------------------------------------------------------\n\n";
+        std::clock_t    start, end;
+        std::vector<Body*> bodies_a(nbodies), bodies_b(nbodies);
+        
+        float3 position, velocity;
+        float m;
+        start = std::clock();
+        for(int i = 0; i < nbodies; i++)
+        {
+            position = get_onsphere_point(r_sphere);
+            velocity = -position*.01f;
+            m = rand(min_m, max_m);
+
+            bodies_a[i] = new Body(position, velocity, m);
+            bodies_b[i] = new Body(position, velocity, m);
+        }
+        end = std::clock();
+        std::cout 
+                  << "bodies count: " << nbodies << std::endl
+                  << "initialization time: " << (end - start) / (double)(CLOCKS_PER_SEC) << " s\n\n";
+
+        // brute
+        start = std::clock(); nbody_nn(bodies_a, simulation_steps); end = std::clock();
+        std::cout << "Simulation time: " << (end - start) / (double)(CLOCKS_PER_SEC) << " s\n\n";
+        for(auto bi: bodies_a)
+        {
+            delete bi;
+        }
+
+        // bh
+        start = std::clock(); nbody_bh(bodies_b, simulation_steps); end = std::clock();
+        std::cout << "Simulation time: " << (end - start) / (double)(CLOCKS_PER_SEC) << " s\n\n";
+        for(auto bi: bodies_b)
+        {
+            delete bi;
+        }
+    }
+}
+
+
+namespace omp
+{
+    void nbody_nn_step(std::vector<Body*>& bodies, float delta)
+    {
+        const int n = bodies.size();
+        float3 accelerations[n];
+
+        float3 ai;
+        #pragma omp parallel for private(ai) shared(bodies)
+        for(int i = 0; i < n; i++)
+        {
+            for(int j = 0; j < n; j++)
+                if (i != j)
+                    ai += body_body_iteraction(bodies.at(i), bodies.at(j));
+
+            accelerations[i] = ai;
+            ai.clear();
+        }
+
+        // update positions, velocities, ceterka
+        #pragma omp parallel for shared(bodies)
+        for(int i = 0; i < n; i++)
+        {
+            bodies[i]->velocity += accelerations[i] * delta;
+            bodies[i]->position += bodies[i]->velocity * delta;
+        }
+    }
+
+    void nbody_nn(std::vector<Body*>& bodies, int steps_count, float delta=1)
+    {
+        std::clock_t start, end;
+
+        for(int i = 0; i < steps_count; i++)
+        {
+            start = std::clock(); nbody_nn_step(bodies, delta); end = std::clock();
+            std::cout <<"[nn]#" << i << " Simulation step time: " << (end - start) / (double)(CLOCKS_PER_SEC) << " s\n";
+        }    
+    }
+
+
+    void nbody_bh_step(std::vector<Body*>& bodies, BHTree* btree, float delta)
+    {
+        int i = 0;
+        const int n = bodies.size();
+        float3 accelerations[n], ai;
+        for(const auto b: bodies)
+        {
+            accelerations[i++] = btree->get_acceleration_for_body(b);
+            ai.clear();
+        }
+
+        // update positions, velocities, ceterka
+        for(i = 0; i < n; i++)
+        {
+            bodies[i]->velocity += accelerations[i] * delta;
+            bodies[i]->position += bodies[i]->velocity * delta;
+        }
+    }
+
+    void nbody_bh(std::vector<Body*>& bodies, int steps_count, float delta=1)
+    {
+        double start, end;
+        BHTree* btree;
+
+        for(int i = 0; i < steps_count; i++)
+        {
+            btree = build_tree(bodies);
+            start = omp_get_wtime(); nbody_bh_step(bodies, btree, delta); end = omp_get_wtime();
+            delete btree;
+            std::cout << "[bh]#" << i << " Simulation step time: " << end-start << " s\n";
         }
     }
 

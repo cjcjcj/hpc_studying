@@ -13,7 +13,8 @@ int main()
         simulation_steps = 5,
         repeats = 5;
 
-    simulation::stdthread::simulate(10000, 2);
+    // simulation::sequential::simulate(50000, 2);
+    simulation::omp::simulate(50000, 2);
     return 1;
 
     for (int repeat = 0; repeat < repeats; repeat++)
