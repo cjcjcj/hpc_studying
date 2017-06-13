@@ -213,72 +213,97 @@ namespace stdthread
             );
         }
 
-        // update positions, velocities, ceterka
-        // for(int i = 0; i < n; i++)
-        // {
-        //     bodies[i]->velocity += accelerations[i] * delta;
-        //     bodies[i]->position += bodies[i]->velocity * delta;
-        // }
+        for(auto& t: threads)
+            t.join();
+    }
+
+    void nbody_bh_step(std::vector<Body*>& bodies, BHTree* btree, float delta)
+    {
+        const int n = bodies.size();
+        std::vector<float3> accelerations(n);
+
+        std::vector<std::thread> threads;
+        int step_size = n/THREADS_COUNT;
+
+        for(int i = 0; i < THREADS_COUNT; i++)
+            threads.push_back(
+                std::thread(
+                    [&accelerations, &bodies, i, step_size, btree]() -> void
+                    {
+                        int l = i*step_size, r = (i+1)*step_size;
+                        for(int j = l; j < r; j++)
+                            accelerations[j] = btree->get_acceleration_for_body(bodies[j]);
+                    }
+                )
+            );
+
+        for(auto& t: threads)
+            t.join();
+
+        threads.clear();
+
+        int l, r;
+        for(int i = 0; i < THREADS_COUNT; i++)
+        {
+            int l = i*step_size, r = (i+1)*step_size;
+            threads.push_back(
+                std::thread(
+                    [&accelerations, &bodies, l, r, delta]() -> void
+                    {
+                        for(int i = l; i < r; i++)
+                        {
+                            bodies[i]->velocity += accelerations[i] * delta;
+                            bodies[i]->position += bodies[i]->velocity * delta;
+                        }
+                    }
+                )
+            );
+        }
 
         for(auto& t: threads)
             t.join();
     }
 
+
     void nbody_nn(std::vector<Body*>& bodies, int steps_count, float delta=1)
     {
-        std::clock_t start, end;
+        std::chrono::high_resolution_clock::time_point start, end;
 
         for(int i = 0; i < steps_count; i++)
         {
-            start = std::clock(); nbody_nn_step(bodies, delta); end = std::clock();
-            std::cout <<"[nn]#" << i << " Simulation step time: " << (end - start) / (double)(CLOCKS_PER_SEC) << " s\n";
+            start = std::chrono::high_resolution_clock::now(); nbody_nn_step(bodies, delta); end = std::chrono::high_resolution_clock::now();
+            auto time_span = std::chrono::duration<double>(end-start);
+            std::cout << "[nn]#" << i << " Simulation step time: " << time_span.count() << " s\n";
         }    
-    }
-
-
-    void nbody_bh_step(std::vector<Body*>& bodies, BHTree* btree, float delta)
-    {
-        int i = 0;
-        const int n = bodies.size();
-        float3 accelerations[n], ai;
-        for(const auto b: bodies)
-        {
-            accelerations[i++] = btree->get_acceleration_for_body(b);
-            ai.clear();
-        }
-
-        // update positions, velocities, ceterka
-        for(i = 0; i < n; i++)
-        {
-            bodies[i]->velocity += accelerations[i] * delta;
-            bodies[i]->position += bodies[i]->velocity * delta;
-        }
     }
 
     void nbody_bh(std::vector<Body*>& bodies, int steps_count, float delta=1)
     {
-        std::chrono::steady_clock::time_point start, end;
+        std::chrono::high_resolution_clock::time_point start, end;
         BHTree* btree;
 
         for(int i = 0; i < steps_count; i++)
         {
+            start = std::chrono::high_resolution_clock::now();
             btree = build_tree(bodies);
-            start = std::chrono::steady_clock::now(); nbody_bh_step(bodies, btree, delta); end = std::chrono::steady_clock::now();
+            nbody_bh_step(bodies, btree, delta);
             delete btree;
-            auto time_span = std::chrono::duration_cast<std::chrono::seconds>(end - start);
+            end = std::chrono::high_resolution_clock::now();
+            auto time_span = std::chrono::duration<double>(end-start);
             std::cout << "[bh]#" << i << " Simulation step time: " << time_span.count() << " s\n";
         }
     }
 
+
     void simulate(int nbodies, int simulation_steps, float r_sphere, float min_m, float max_m)
     {
         std::cout << "---------------------------------------------------------------\n\n";
-        std::clock_t    start, end;
+        std::chrono::high_resolution_clock::time_point start, end;
         std::vector<Body*> bodies_a(nbodies), bodies_b(nbodies);
         
         float3 position, velocity;
         float m;
-        start = std::clock();
+        start = std::chrono::high_resolution_clock::now();
         for(int i = 0; i < nbodies; i++)
         {
             position = get_onsphere_point(r_sphere);
@@ -288,29 +313,29 @@ namespace stdthread
             bodies_a[i] = new Body(position, velocity, m);
             bodies_b[i] = new Body(position, velocity, m);
         }
-        end = std::clock();
+        end = std::chrono::high_resolution_clock::now();
         std::cout 
                   << "bodies count: " << nbodies << std::endl
-                  << "initialization time: " << (end - start) / (double)(CLOCKS_PER_SEC) << " s\n\n";
+                  << "initialization time: " << std::chrono::duration<double>(end-start).count() << " s\n\n";
+
 
         // brute
-        start = std::clock(); nbody_nn(bodies_a, simulation_steps); end = std::clock();
-        std::cout << "Simulation time: " << (end - start) / (double)(CLOCKS_PER_SEC) << " s\n\n";
+        start = std::chrono::high_resolution_clock::now(); nbody_nn(bodies_a, simulation_steps); end = std::chrono::high_resolution_clock::now();
+        std::cout << "Simulation time: " << std::chrono::duration<double>(end-start).count() << " s\n\n";
         for(auto bi: bodies_a)
         {
             delete bi;
         }
 
         // bh
-        start = std::clock(); nbody_bh(bodies_b, simulation_steps); end = std::clock();
-        std::cout << "Simulation time: " << (end - start) / (double)(CLOCKS_PER_SEC) << " s\n\n";
+        start = std::chrono::high_resolution_clock::now(); nbody_bh(bodies_b, simulation_steps); end = std::chrono::high_resolution_clock::now();
+        std::cout << "Simulation time: " << std::chrono::duration<double>(end-start).count() << " s\n\n";
         for(auto bi: bodies_b)
         {
             delete bi;
         }
     }
 }
-
 
 namespace omp
 {
@@ -320,34 +345,36 @@ namespace omp
         float3 accelerations[n];
 
         float3 ai;
-        #pragma omp parallel for private(ai) shared(bodies)
-        for(int i = 0; i < n; i++)
+        #pragma omp parallel shared(bodies, accelerations)
         {
-            for(int j = 0; j < n; j++)
-                if (i != j)
-                    ai += body_body_iteraction(bodies.at(i), bodies.at(j));
+            #pragma omp for private(ai)
+            for(int i = 0; i < n; i++)
+            {
+                for(int j = 0; j < n; j++)
+                    if (i != j)
+                        ai += body_body_iteraction(bodies.at(i), bodies.at(j));
 
-            accelerations[i] = ai;
-            ai.clear();
-        }
+                accelerations[i] = ai;
+                ai.clear();
+            }
 
-        // update positions, velocities, ceterka
-        #pragma omp parallel for shared(bodies)
-        for(int i = 0; i < n; i++)
-        {
-            bodies[i]->velocity += accelerations[i] * delta;
-            bodies[i]->position += bodies[i]->velocity * delta;
+            #pragma omp for
+            for(int i = 0; i < n; i++)
+            {
+                bodies[i]->velocity += accelerations[i] * delta;
+                bodies[i]->position += bodies[i]->velocity * delta;
+            }
         }
     }
 
     void nbody_nn(std::vector<Body*>& bodies, int steps_count, float delta=1)
     {
-        std::clock_t start, end;
+        double start, end;
 
         for(int i = 0; i < steps_count; i++)
         {
-            start = std::clock(); nbody_nn_step(bodies, delta); end = std::clock();
-            std::cout <<"[nn]#" << i << " Simulation step time: " << (end - start) / (double)(CLOCKS_PER_SEC) << " s\n";
+            start = omp_get_wtime(); nbody_nn_step(bodies, delta); end = omp_get_wtime();
+            std::cout <<"[nn]#" << i << " Simulation step time: " << end - start << " s\n";
         }    
     }
 
@@ -409,20 +436,21 @@ namespace omp
                   << "initialization time: " << (end - start) / (double)(CLOCKS_PER_SEC) << " s\n\n";
 
         // brute
-        start = std::clock(); nbody_nn(bodies_a, simulation_steps); end = std::clock();
-        std::cout << "Simulation time: " << (end - start) / (double)(CLOCKS_PER_SEC) << " s\n\n";
+        double t1, t2;
+        t1=omp_get_wtime(); nbody_nn(bodies_a, simulation_steps); t2=omp_get_wtime();
+        std::cout << "Simulation time: " << t2-t1 << " s\n\n";
         for(auto bi: bodies_a)
         {
             delete bi;
         }
 
-        // bh
-        start = std::clock(); nbody_bh(bodies_b, simulation_steps); end = std::clock();
-        std::cout << "Simulation time: " << (end - start) / (double)(CLOCKS_PER_SEC) << " s\n\n";
-        for(auto bi: bodies_b)
-        {
-            delete bi;
-        }
+        // // bh
+        // start = std::clock(); nbody_bh(bodies_b, simulation_steps); end = std::clock();
+        // std::cout << "Simulation time: " << (end - start) / (double)(CLOCKS_PER_SEC) << " s\n\n";
+        // for(auto bi: bodies_b)
+        // {
+        //     delete bi;
+        // }
     }
 }
 

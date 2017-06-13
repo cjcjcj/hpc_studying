@@ -14,14 +14,15 @@ int main()
         repeats = 5;
 
     // simulation::sequential::simulate(50000, 2);
-    simulation::omp::simulate(50000, 2);
+    simulation::stdthread::simulate(10000, 2);
     return 1;
 
     for (int repeat = 0; repeat < repeats; repeat++)
     {
         std::cout << "cycle #" << repeat << std::endl;
-        for(int pow = 1; pow <= max_pow; pow++)
-            simulation::stdthread::simulate(std::pow(10, pow), simulation_steps);
+        // for(int pow = 1; pow <= max_pow; pow++)
+            // simulation::omp::simulate(std::pow(10, pow), simulation_steps);
+        // simulation::omp::simulate(10000, 2);
         std::cout << std::endl;
     }
 }
