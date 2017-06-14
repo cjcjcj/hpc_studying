@@ -24,6 +24,5 @@ namespace omp
     void simulate(int nbodies, int simulation_steps, float r_sphere=4000, float min_m=1.f, float max_m=100.f);
 }
 
-
 }
 
