@@ -1,0 +1,658 @@
+cycle #0
+bodies count: 10
+
+pthread
+[nn]#0 Simulation step time: 0.000460576
+[nn]#1 Simulation step time: 0.00031366
+[nn]#2 Simulation step time: 0.000429226
+[nn]#3 Simulation step time: 0.000308631
+[nn]#4 Simulation step time: 0.00024718
+Simulation time: 0.00190813
+
+[bh]#0 Simulation step time: 0.000452114
+[bh]#1 Simulation step time: 0.00036137
+[bh]#2 Simulation step time: 0.000334857
+[bh]#3 Simulation step time: 0.000318427
+[bh]#4 Simulation step time: 0.000355937
+Simulation time: 0.00193924
+
+
+omp
+[nn]#0 Simulation step time: 0.000151384
+[nn]#1 Simulation step time: 3.1645e-05
+[nn]#2 Simulation step time: 2.7933e-05
+[nn]#3 Simulation step time: 2.7366e-05
+[nn]#4 Simulation step time: 2.6781e-05
+Simulation time: 0.000303865
+
+[bh]#0 Simulation step time: 5.5757e-05
+[bh]#1 Simulation step time: 5.7076e-05
+[bh]#2 Simulation step time: 5.2788e-05
+[bh]#3 Simulation step time: 5.3594e-05
+[bh]#4 Simulation step time: 5.3449e-05
+Simulation time: 0.000679233
+
+-------------------------------------------------------------
+bodies count: 100
+
+pthread
+[nn]#0 Simulation step time: 0.00824955
+[nn]#1 Simulation step time: 0.00298024
+[nn]#2 Simulation step time: 0.00158179
+[nn]#3 Simulation step time: 0.0015606
+[nn]#4 Simulation step time: 0.00233502
+Simulation time: 0.0167902
+
+[bh]#0 Simulation step time: 0.00320702
+[bh]#1 Simulation step time: 0.00264333
+[bh]#2 Simulation step time: 0.00324033
+[bh]#3 Simulation step time: 0.0032432
+[bh]#4 Simulation step time: 0.0036253
+Simulation time: 0.0160068
+
+
+omp
+[nn]#0 Simulation step time: 0.0116413
+[nn]#1 Simulation step time: 0.00513596
+[nn]#2 Simulation step time: 0.00108939
+[nn]#3 Simulation step time: 0.00108583
+[nn]#4 Simulation step time: 0.00111653
+Simulation time: 0.0201029
+
+[bh]#0 Simulation step time: 0.00152907
+[bh]#1 Simulation step time: 0.00155182
+[bh]#2 Simulation step time: 0.00159973
+[bh]#3 Simulation step time: 0.00156204
+[bh]#4 Simulation step time: 0.00158091
+Simulation time: 0.00958597
+
+-------------------------------------------------------------
+bodies count: 1000
+
+pthread
+[nn]#0 Simulation step time: 0.0847511
+[nn]#1 Simulation step time: 0.0602703
+[nn]#2 Simulation step time: 0.0584563
+[nn]#3 Simulation step time: 0.0561698
+[nn]#4 Simulation step time: 0.0560628
+Simulation time: 0.315757
+
+[bh]#0 Simulation step time: 0.0505695
+[bh]#1 Simulation step time: 0.052471
+[bh]#2 Simulation step time: 0.052891
+[bh]#3 Simulation step time: 0.0540207
+[bh]#4 Simulation step time: 0.0545753
+Simulation time: 0.264565
+
+
+omp
+[nn]#0 Simulation step time: 0.0644591
+[nn]#1 Simulation step time: 0.0588416
+[nn]#2 Simulation step time: 0.0617616
+[nn]#3 Simulation step time: 0.061071
+[nn]#4 Simulation step time: 0.0630353
+Simulation time: 0.309197
+
+[bh]#0 Simulation step time: 0.050359
+[bh]#1 Simulation step time: 0.053234
+[bh]#2 Simulation step time: 0.0537413
+[bh]#3 Simulation step time: 0.0595351
+[bh]#4 Simulation step time: 0.0584785
+Simulation time: 0.287936
+
+-------------------------------------------------------------
+bodies count: 10000
+
+pthread
+[nn]#0 Simulation step time: 8.12319
+[nn]#1 Simulation step time: 8.88526
+[nn]#2 Simulation step time: 11.2908
+[nn]#3 Simulation step time: 8.96798
+[nn]#4 Simulation step time: 11.5859
+Simulation time: 48.8532
+
+[bh]#0 Simulation step time: 1.66153
+[bh]#1 Simulation step time: 3.00963
+[bh]#2 Simulation step time: 2.93236
+[bh]#3 Simulation step time: 2.10333
+[bh]#4 Simulation step time: 3.57361
+Simulation time: 13.2806
+
+
+omp
+[nn]#0 Simulation step time: 10.4056
+[nn]#1 Simulation step time: 10.9353
+[nn]#2 Simulation step time: 11.9884
+[nn]#3 Simulation step time: 9.78612
+[nn]#4 Simulation step time: 11.5882
+Simulation time: 54.7037
+
+[bh]#0 Simulation step time: 2.58145
+[bh]#1 Simulation step time: 3.10198
+[bh]#2 Simulation step time: 1.89071
+[bh]#3 Simulation step time: 4.17667
+[bh]#4 Simulation step time: 1.90957
+Simulation time: 13.9004
+
+-------------------------------------------------------------
+bodies count: 100000
+
+pthread
+[nn]#0 Simulation step time: 1025.56
+[nn]#1 Simulation step time: 1023.01
+[nn]#2 Simulation step time: 990.133
+[nn]#3 Simulation step time: 1009.97
+[nn]#4 Simulation step time: 1004.19
+Simulation time: 5052.87
+
+[bh]#0 Simulation step time: 41.7363
+[bh]#1 Simulation step time: 48.4104
+[bh]#2 Simulation step time: 51.3428
+[bh]#3 Simulation step time: 49.6182
+[bh]#4 Simulation step time: 57.3448
+Simulation time: 248.453
+
+
+omp
+[nn]#0 Simulation step time: 1056.45
+[nn]#1 Simulation step time: 1071.94
+[nn]#2 Simulation step time: 1042.68
+[nn]#3 Simulation step time: 1058.46
+[nn]#4 Simulation step time: 1059.54
+Simulation time: 5289.07
+
+[bh]#0 Simulation step time: 43.3944
+[bh]#1 Simulation step time: 40.1475
+[bh]#2 Simulation step time: 50.6631
+[bh]#3 Simulation step time: 54.0393
+[bh]#4 Simulation step time: 65.4593
+Simulation time: 256.773
+
+-------------------------------------------------------------
+*************************************************************
+
+cycle #1
+bodies count: 10
+
+pthread
+[nn]#0 Simulation step time: 0.00367659
+[nn]#1 Simulation step time: 0.000327489
+[nn]#2 Simulation step time: 0.000305789
+[nn]#3 Simulation step time: 0.000314797
+[nn]#4 Simulation step time: 0.000355928
+Simulation time: 0.00503725
+
+[bh]#0 Simulation step time: 0.000446465
+[bh]#1 Simulation step time: 0.000384363
+[bh]#2 Simulation step time: 0.000388275
+[bh]#3 Simulation step time: 0.000407626
+[bh]#4 Simulation step time: 0.000453462
+Simulation time: 0.00212316
+
+
+omp
+[nn]#0 Simulation step time: 0.0209576
+[nn]#1 Simulation step time: 0.0117395
+[nn]#2 Simulation step time: 0.0113291
+[nn]#3 Simulation step time: 1.883e-05
+[nn]#4 Simulation step time: 1.6155e-05
+Simulation time: 0.0441039
+
+[bh]#0 Simulation step time: 2.9894e-05
+[bh]#1 Simulation step time: 2.8082e-05
+[bh]#2 Simulation step time: 2.8265e-05
+[bh]#3 Simulation step time: 2.6949e-05
+[bh]#4 Simulation step time: 2.7437e-05
+Simulation time: 0.000332272
+
+-------------------------------------------------------------
+bodies count: 100
+
+pthread
+[nn]#0 Simulation step time: 0.00545653
+[nn]#1 Simulation step time: 0.00216967
+[nn]#2 Simulation step time: 0.00213443
+[nn]#3 Simulation step time: 0.00214315
+[nn]#4 Simulation step time: 0.00211359
+Simulation time: 0.0140702
+
+[bh]#0 Simulation step time: 0.00192374
+[bh]#1 Simulation step time: 0.00336714
+[bh]#2 Simulation step time: 0.00357098
+[bh]#3 Simulation step time: 0.00217882
+[bh]#4 Simulation step time: 0.00194198
+Simulation time: 0.0130438
+
+
+omp
+[nn]#0 Simulation step time: 0.0121095
+[nn]#1 Simulation step time: 0.0088232
+[nn]#2 Simulation step time: 0.00102514
+[nn]#3 Simulation step time: 0.00109055
+[nn]#4 Simulation step time: 0.00104004
+Simulation time: 0.024125
+
+[bh]#0 Simulation step time: 0.00162993
+[bh]#1 Simulation step time: 0.00165672
+[bh]#2 Simulation step time: 0.00166243
+[bh]#3 Simulation step time: 0.00169608
+[bh]#4 Simulation step time: 0.00166526
+Simulation time: 0.0102515
+
+-------------------------------------------------------------
+bodies count: 1000
+
+pthread
+[nn]#0 Simulation step time: 0.109064
+[nn]#1 Simulation step time: 0.0978832
+[nn]#2 Simulation step time: 0.0978236
+[nn]#3 Simulation step time: 0.0982227
+[nn]#4 Simulation step time: 0.0978693
+Simulation time: 0.500922
+
+[bh]#0 Simulation step time: 0.0901203
+[bh]#1 Simulation step time: 0.0913053
+[bh]#2 Simulation step time: 0.0924057
+[bh]#3 Simulation step time: 0.0939537
+[bh]#4 Simulation step time: 0.0895012
+Simulation time: 0.457355
+
+
+omp
+[nn]#0 Simulation step time: 0.0785299
+[nn]#1 Simulation step time: 0.0724502
+[nn]#2 Simulation step time: 0.0712521
+[nn]#3 Simulation step time: 0.0715075
+[nn]#4 Simulation step time: 0.0714137
+Simulation time: 0.365189
+
+[bh]#0 Simulation step time: 0.0590239
+[bh]#1 Simulation step time: 0.0611701
+[bh]#2 Simulation step time: 0.0618996
+[bh]#3 Simulation step time: 0.062863
+[bh]#4 Simulation step time: 0.0635858
+Simulation time: 0.322157
+
+-------------------------------------------------------------
+bodies count: 10000
+
+pthread
+[nn]#0 Simulation step time: 8.15951
+[nn]#1 Simulation step time: 8.18465
+[nn]#2 Simulation step time: 9.47446
+[nn]#3 Simulation step time: 11.7373
+[nn]#4 Simulation step time: 10.4248
+Simulation time: 47.9808
+
+[bh]#0 Simulation step time: 3.03754
+[bh]#1 Simulation step time: 1.8494
+[bh]#2 Simulation step time: 4.52216
+[bh]#3 Simulation step time: 1.90721
+[bh]#4 Simulation step time: 3.71801
+Simulation time: 15.0344
+
+
+omp
+[nn]#0 Simulation step time: 10.2614
+[nn]#1 Simulation step time: 11.6834
+[nn]#2 Simulation step time: 11.9948
+[nn]#3 Simulation step time: 9.79744
+[nn]#4 Simulation step time: 11.9856
+Simulation time: 55.7227
+
+[bh]#0 Simulation step time: 1.67087
+[bh]#1 Simulation step time: 4.10696
+[bh]#2 Simulation step time: 1.7613
+[bh]#3 Simulation step time: 4.14176
+[bh]#4 Simulation step time: 2.1915
+Simulation time: 14.195
+
+-------------------------------------------------------------
+bodies count: 100000
+
+pthread
+[nn]#0 Simulation step time: 1028.27
+[nn]#1 Simulation step time: 1017.66
+[nn]#2 Simulation step time: 1023.23
+[nn]#3 Simulation step time: 1023.59
+[nn]#4 Simulation step time: 1023.61
+Simulation time: 5116.37
+
+[bh]#0 Simulation step time: 35.6219
+[bh]#1 Simulation step time: 43.8211
+[bh]#2 Simulation step time: 46.4958
+[bh]#3 Simulation step time: 59.7385
+[bh]#4 Simulation step time: 58.4517
+Simulation time: 244.129
+
+
+omp
+[nn]#0 Simulation step time: 1060.99
+[nn]#1 Simulation step time: 1072.86
+[nn]#2 Simulation step time: 1067.23
+[nn]#3 Simulation step time: 1061.87
+[nn]#4 Simulation step time: 1065.31
+Simulation time: 5328.26
+
+[bh]#0 Simulation step time: 42.8644
+[bh]#1 Simulation step time: 49.7836
+[bh]#2 Simulation step time: 52.2834
+[bh]#3 Simulation step time: 59.427
+[bh]#4 Simulation step time: 66.3953
+Simulation time: 273.581
+
+-------------------------------------------------------------
+*************************************************************
+
+cycle #2
+bodies count: 10
+
+pthread
+[nn]#0 Simulation step time: 0.000592653
+[nn]#1 Simulation step time: 0.000353763
+[nn]#2 Simulation step time: 0.000305262
+[nn]#3 Simulation step time: 0.000286179
+[nn]#4 Simulation step time: 0.000283958
+Simulation time: 0.00191807
+
+[bh]#0 Simulation step time: 0.000457329
+[bh]#1 Simulation step time: 0.000423747
+[bh]#2 Simulation step time: 0.000428012
+[bh]#3 Simulation step time: 0.000399553
+[bh]#4 Simulation step time: 0.000403967
+Simulation time: 0.00218993
+
+
+omp
+[nn]#0 Simulation step time: 0.0249155
+[nn]#1 Simulation step time: 0.0287377
+[nn]#2 Simulation step time: 0.0212165
+[nn]#3 Simulation step time: 0.011144
+[nn]#4 Simulation step time: 3.8744e-05
+Simulation time: 0.0861439
+
+[bh]#0 Simulation step time: 6.978e-05
+[bh]#1 Simulation step time: 6.588e-05
+[bh]#2 Simulation step time: 6.5394e-05
+[bh]#3 Simulation step time: 6.4888e-05
+[bh]#4 Simulation step time: 6.4657e-05
+Simulation time: 0.000861573
+
+-------------------------------------------------------------
+bodies count: 100
+
+pthread
+[nn]#0 Simulation step time: 0.0108176
+[nn]#1 Simulation step time: 0.00417638
+[nn]#2 Simulation step time: 0.00372794
+[nn]#3 Simulation step time: 0.004235
+[nn]#4 Simulation step time: 0.00374029
+Simulation time: 0.02682
+
+[bh]#0 Simulation step time: 0.00585879
+[bh]#1 Simulation step time: 0.00384233
+[bh]#2 Simulation step time: 0.00382907
+[bh]#3 Simulation step time: 0.00383585
+[bh]#4 Simulation step time: 0.00396544
+Simulation time: 0.021429
+
+
+omp
+[nn]#0 Simulation step time: 0.0220389
+[nn]#1 Simulation step time: 0.0119729
+[nn]#2 Simulation step time: 0.0080095
+[nn]#3 Simulation step time: 0.00204648
+[nn]#4 Simulation step time: 0.00207971
+Simulation time: 0.0462177
+
+[bh]#0 Simulation step time: 0.00298402
+[bh]#1 Simulation step time: 0.00310425
+[bh]#2 Simulation step time: 0.00302938
+[bh]#3 Simulation step time: 0.00304769
+[bh]#4 Simulation step time: 0.00305734
+Simulation time: 0.0184933
+
+-------------------------------------------------------------
+bodies count: 1000
+
+pthread
+[nn]#0 Simulation step time: 0.204316
+[nn]#1 Simulation step time: 0.196416
+[nn]#2 Simulation step time: 0.196634
+[nn]#3 Simulation step time: 0.196508
+[nn]#4 Simulation step time: 0.19732
+Simulation time: 0.991313
+
+[bh]#0 Simulation step time: 0.173232
+[bh]#1 Simulation step time: 0.18065
+[bh]#2 Simulation step time: 0.181826
+[bh]#3 Simulation step time: 0.191008
+[bh]#4 Simulation step time: 0.19241
+Simulation time: 0.91926
+
+
+omp
+[nn]#0 Simulation step time: 0.216093
+[nn]#1 Simulation step time: 0.173218
+[nn]#2 Simulation step time: 0.0811224
+[nn]#3 Simulation step time: 0.0626113
+[nn]#4 Simulation step time: 0.0587481
+Simulation time: 0.591844
+
+[bh]#0 Simulation step time: 0.0481027
+[bh]#1 Simulation step time: 0.0501538
+[bh]#2 Simulation step time: 0.0537372
+[bh]#3 Simulation step time: 0.0562423
+[bh]#4 Simulation step time: 0.05696
+Simulation time: 0.277635
+
+-------------------------------------------------------------
+bodies count: 10000
+
+pthread
+[nn]#0 Simulation step time: 9.63459
+[nn]#1 Simulation step time: 10.8571
+[nn]#2 Simulation step time: 10.9367
+[nn]#3 Simulation step time: 10.7316
+[nn]#4 Simulation step time: 8.1516
+Simulation time: 50.3118
+
+[bh]#0 Simulation step time: 2.1121
+[bh]#1 Simulation step time: 1.9491
+[bh]#2 Simulation step time: 2.31289
+[bh]#3 Simulation step time: 2.80964
+[bh]#4 Simulation step time: 2.08006
+Simulation time: 11.2639
+
+
+omp
+[nn]#0 Simulation step time: 8.46227
+[nn]#1 Simulation step time: 8.49153
+[nn]#2 Simulation step time: 12.3995
+[nn]#3 Simulation step time: 10.2468
+[nn]#4 Simulation step time: 11.1924
+Simulation time: 50.7927
+
+[bh]#0 Simulation step time: 3.05071
+[bh]#1 Simulation step time: 2.58816
+[bh]#2 Simulation step time: 1.78403
+[bh]#3 Simulation step time: 4.1845
+[bh]#4 Simulation step time: 1.92217
+Simulation time: 13.8015
+
+-------------------------------------------------------------
+bodies count: 100000
+
+pthread
+[nn]#0 Simulation step time: 1027.25
+[nn]#1 Simulation step time: 1021.33
+[nn]#2 Simulation step time: 1043.03
+[nn]#3 Simulation step time: 1042.43
+[nn]#4 Simulation step time: 1039.61
+Simulation time: 5173.64
+
+[bh]#0 Simulation step time: 42.8739
+[bh]#1 Simulation step time: 38.5917
+[bh]#2 Simulation step time: 47.5084
+[bh]#3 Simulation step time: 54.3474
+[bh]#4 Simulation step time: 61.328
+Simulation time: 244.65
+
+
+omp
+[nn]#0 Simulation step time: 1077.06
+[nn]#1 Simulation step time: 1075.65
+[nn]#2 Simulation step time: 1068.35
+[nn]#3 Simulation step time: 1086.45
+[nn]#4 Simulation step time: 1069.62
+Simulation time: 5377.13
+
+[bh]#0 Simulation step time: 42.8942
+[bh]#1 Simulation step time: 47.2797
+[bh]#2 Simulation step time: 48.1067
+[bh]#3 Simulation step time: 61.5787
+[bh]#4 Simulation step time: 55.9563
+Simulation time: 258.105
+
+-------------------------------------------------------------
+*************************************************************
+
+cycle #3
+bodies count: 10
+
+pthread
+[nn]#0 Simulation step time: 0.00024252
+[nn]#1 Simulation step time: 0.000431104
+[nn]#2 Simulation step time: 0.00271813
+[nn]#3 Simulation step time: 0.000214279
+[nn]#4 Simulation step time: 0.000272483
+Simulation time: 0.00396985
+
+[bh]#0 Simulation step time: 0.000222611
+[bh]#1 Simulation step time: 0.00024202
+[bh]#2 Simulation step time: 0.000404635
+[bh]#3 Simulation step time: 0.000384063
+[bh]#4 Simulation step time: 0.000317129
+Simulation time: 0.0016413
+
+
+omp
+[nn]#0 Simulation step time: 0.0110602
+[nn]#1 Simulation step time: 0.0106681
+[nn]#2 Simulation step time: 0.00751613
+[nn]#3 Simulation step time: 0.00532843
+[nn]#4 Simulation step time: 1.1787e-05
+Simulation time: 0.0346128
+
+[bh]#0 Simulation step time: 1.7402e-05
+[bh]#1 Simulation step time: 1.5788e-05
+[bh]#2 Simulation step time: 1.5651e-05
+[bh]#3 Simulation step time: 1.56341e-05
+[bh]#4 Simulation step time: 1.5742e-05
+Simulation time: 0.000173937
+
+-------------------------------------------------------------
+bodies count: 100
+
+pthread
+[nn]#0 Simulation step time: 0.00442574
+[nn]#1 Simulation step time: 0.00145332
+[nn]#2 Simulation step time: 0.00144617
+[nn]#3 Simulation step time: 0.00145769
+[nn]#4 Simulation step time: 0.00144318
+Simulation time: 0.0102597
+
+[bh]#0 Simulation step time: 0.00211498
+[bh]#1 Simulation step time: 0.00212002
+[bh]#2 Simulation step time: 0.00215821
+[bh]#3 Simulation step time: 0.00245392
+[bh]#4 Simulation step time: 0.00176218
+Simulation time: 0.0106452
+
+
+omp
+[nn]#0 Simulation step time: 0.00812604
+[nn]#1 Simulation step time: 0.00317214
+[nn]#2 Simulation step time: 0.000710565
+[nn]#3 Simulation step time: 0.000724943
+[nn]#4 Simulation step time: 0.000760551
+Simulation time: 0.0135153
+
+[bh]#0 Simulation step time: 0.00115049
+[bh]#1 Simulation step time: 0.001129
+[bh]#2 Simulation step time: 0.00113301
+[bh]#3 Simulation step time: 0.00114446
+[bh]#4 Simulation step time: 0.00113626
+Simulation time: 0.00700959
+
+-------------------------------------------------------------
+bodies count: 1000
+
+pthread
+[nn]#0 Simulation step time: 0.0736506
+[nn]#1 Simulation step time: 0.0681062
+[nn]#2 Simulation step time: 0.0680923
+[nn]#3 Simulation step time: 0.0680264
+[nn]#4 Simulation step time: 0.0680911
+Simulation time: 0.346001
+
+[bh]#0 Simulation step time: 0.062489
+[bh]#1 Simulation step time: 0.0655671
+[bh]#2 Simulation step time: 0.0651722
+[bh]#3 Simulation step time: 0.0651053
+[bh]#4 Simulation step time: 0.0655056
+Simulation time: 0.32389
+
+
+omp
+[nn]#0 Simulation step time: 0.0790759
+[nn]#1 Simulation step time: 0.0714288
+[nn]#2 Simulation step time: 0.0713406
+[nn]#3 Simulation step time: 0.0715199
+[nn]#4 Simulation step time: 0.0728672
+Simulation time: 0.366264
+
+[bh]#0 Simulation step time: 0.0607654
+[bh]#1 Simulation step time: 0.089632
+[bh]#2 Simulation step time: 0.0906586
+[bh]#3 Simulation step time: 0.0921026
+[bh]#4 Simulation step time: 0.0925849
+Simulation time: 0.444612
+
+-------------------------------------------------------------
+bodies count: 10000
+
+pthread
+[nn]#0 Simulation step time: 8.26494
+[nn]#1 Simulation step time: 11.6774
+[nn]#2 Simulation step time: 11.1511
+[nn]#3 Simulation step time: 9.61539
+[nn]#4 Simulation step time: 11.5716
+Simulation time: 52.2805
+
+[bh]#0 Simulation step time: 2.54009
+[bh]#1 Simulation step time: 2.18351
+[bh]#2 Simulation step time: 2.01313
+[bh]#3 Simulation step time: 3.47595
+[bh]#4 Simulation step time: 2.71546
+Simulation time: 12.9283
+
+
+omp
+[nn]#0 Simulation step time: 12.0565
+[nn]#1 Simulation step time: 10.6393
+[nn]#2 Simulation step time: 8.41736
+[nn]#3 Simulation step time: 8.43544
+[nn]#4 Simulation step time: 8.45994
+Simulation time: 48.0085
+
+[bh]#0 Simulation step time: 1.73359
+[bh]#1 Simulation step time: 2.40128
+[bh]#2 Simulation step time: 2.50092
+[bh]#3 Simulation step time: 1.86661
+[bh]#4 Simulation step time: 2.04885
+Simulation time: 10.7848
+
+-------------------------------------------------------------
+bodies count: 100000
+
