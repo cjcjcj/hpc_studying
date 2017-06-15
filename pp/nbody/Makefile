@@ -1,3 +1,4 @@
+.DEFAULT_GOAL := install
 SHELL := /bin/bash
 
 CPPFLAGS = -pthread -fopenmp --std=c++11

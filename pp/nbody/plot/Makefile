@@ -1,3 +1,4 @@
+.DEFAULT_GOAL := install
 SHELL := /bin/bash
 
 PY_VERSION ?= 3.5
@@ -9,10 +10,10 @@ PYVENV ?= pyvenv-$(PY_VERSION)
 
 
 install: | make-dirs install-py-deps
-	ln -s ../results data
 
 make-dirs:
 	$(PYVENV) $(VENV_PATH)
+	ln -s ../results data
 
 install-py-deps:
 	$(ACTIVATE_VENV) ; \
@@ -23,3 +24,4 @@ install-py-deps:
 clean:
 	@rm -f *.png *.jpg
 	@rm -rf venv
+	@rm data
