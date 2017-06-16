@@ -24,4 +24,4 @@ install-py-deps:
 clean:
 	@rm -f *.png *.jpg
 	@rm -rf venv
-	@rm data
+	@rm -f data
