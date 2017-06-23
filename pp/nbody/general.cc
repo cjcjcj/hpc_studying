@@ -23,14 +23,14 @@ float3 get_onsphere_point(float r)
 {
     r -= .00001;
     const float
-        phi = rand(PI_M2),
-        sintheta = rand(-1.f, 1.f),
-        costheta = std::sqrt(1.f - sintheta*sintheta);
+        theta = rand(PI_M2),
+        u = rand(-1.f, 1.f),
+        a = std::sqrt(1.f - u*u);
 
     float3 point {
-        r * std::cos(phi) * sintheta,
-        r * std::sin(phi) * sintheta,
-        r * costheta
+        r * std::cos(theta) * a,
+        r * std::sin(theta) * a,
+        r * u
     };
     return point;
 }
