@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 
+import numpy as np
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+import mpl_toolkits.mplot3d.axes3d as p3
 
 
 def lab1():
@@ -28,19 +30,19 @@ def lab1():
     ax = bh_T_median.plot.line(x=0, y='bs', label='[bh] building, simulation', ax=ax)
     ax = bh_T_median.plot.line(x=0, y=4, label='[bh] simulation', ax=ax)
     ax.set(xlabel='bodies', ylabel='time, s', title='sequential')
-    plt.savefig('lab1_1.png')
+    plt.savefig('img/lab1_1.png')
 
     fig = plt.figure()
     ax = fig.add_subplot(111)
     ax = bh_100k.plot.line(x=2, y='totalT', xticks=bh_100k[2])
     ax.set(xlabel='simulation step', ylabel='time, s', title='sequential')
-    plt.savefig('lab1_2.png')
+    plt.savefig('img/lab1_2.png')
 
     fig = plt.figure()
     ax = fig.add_subplot(111)
     ax = nn2bh.plot.line(x='bc', legend=False, ax=ax)
     ax.set(xlabel='bodies', ylabel='native/bh', title='sequential')
-    plt.savefig('lab1_3.png')
+    plt.savefig('img/lab1_3.png')
 
 
 def lab2():
@@ -71,20 +73,20 @@ def lab2():
     ax = nn_pthread_T_median.plot.line(x=0, y=3, label='native pthread', ax=ax)
     ax = bh_pthread_T_median.plot.line(x=0, y=3, label='bh pthread', ax=ax)
     ax.set(xlabel='bodies', ylabel='time, s', title='pthread')
-    plt.savefig('lab2_1.png')
+    plt.savefig('img/lab2_1.png')
 
     fig = plt.figure()
     ax = fig.add_subplot(111)
     ax = bh_speedup.plot.line(x='bc', y=0, label='bh speedup', ax=ax)
     ax = nn_speedup.plot.line(x='bc', y=3, label='native speedup', ax=ax)
     ax.set(xlabel='bodies', ylabel='speed up', title='pthread')
-    plt.savefig('lab2_2.png')
+    plt.savefig('img/lab2_2.png')
 
     fig = plt.figure()
     ax = fig.add_subplot(111)
     ax = nn2bh.plot.line(x='bc', legend=False, ax=ax)
     ax.set(xlabel='bodies', ylabel='native/bh', title='pthread')
-    plt.savefig('lab2_3.png')
+    plt.savefig('img/lab2_3.png')
 
 
 def lab3():
@@ -115,23 +117,58 @@ def lab3():
     ax = nn_omp_T_median.plot.line(x=0, y=3, label='native pthread', ax=ax)
     ax = bh_omp_T_median.plot.line(x=0, y=3, label='bh pthread', ax=ax)
     ax.set(xlabel='bodies', ylabel='time, s', title='omp')
-    plt.savefig('lab3_1.png')
+    plt.savefig('img/lab3_1.png')
 
     fig = plt.figure()
     ax = fig.add_subplot(111)
     ax = bh_speedup.plot.line(x='bc', y=0, label='bh speedup', ax=ax)
     ax = nn_speedup.plot.line(x='bc', y=3, label='native speedup', ax=ax)
     ax.set(xlabel='bodies', ylabel='speed up', title='omp')
-    plt.savefig('lab3_2.png')
+    plt.savefig('img/lab3_2.png')
 
     fig = plt.figure()
     ax = fig.add_subplot(111)
     ax = nn2bh.plot.line(x='bc', legend=False, ax=ax)
     ax.set(xlabel='bodies', ylabel='native/bh', title='omp')
-    plt.savefig('lab3_3.png')
+    plt.savefig('img/lab3_3.png')
+
+
+# plot initial distribution
+def _get_body_gen(n, r):
+    for i in range(n):
+        theta = np.random.uniform(0, np.pi*2)
+        u = np.random.uniform(-1, 1)
+        a = np.sqrt(1 - u*u)
+
+        body = (
+            r * np.cos(theta) * a,
+            r * np.sin(theta) * a,
+            r * u
+        )
+        yield body
+
+
+def _get_sphere(n, r=4000):
+    r -= .00001
+
+    points = _get_body_gen(n, r)
+    return points
+
+
+def plot_variance(min_pow=1, max_pow=5):
+    npoints = (10**i for i in range(1, max_pow+1))
+    for n in npoints:
+        sphere = _get_sphere(n)
+
+        fig = plt.figure(n)
+        ax = fig.add_subplot(111, projection='3d')
+        ax.scatter(*zip(*sphere))
+
+        plt.savefig('sphere_img/{}.png'.format(n))
 
 
 if __name__ == '__main__':
-    lab1()
-    lab2()
-    lab3()
+    # lab1()
+    # lab2()
+    # lab3()
+    plot_variance()
