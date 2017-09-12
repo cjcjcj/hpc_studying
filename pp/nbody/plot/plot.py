@@ -114,8 +114,8 @@ def lab3():
     ax = fig.add_subplot(111)
     ax = nn_T_median.plot.line(x=0, y=3, label='native')
     ax = bh_T_median.plot.line(x=0, y='totalT', label='bh', ax=ax)
-    ax = nn_omp_T_median.plot.line(x=0, y=3, label='native pthread', ax=ax)
-    ax = bh_omp_T_median.plot.line(x=0, y=3, label='bh pthread', ax=ax)
+    ax = nn_omp_T_median.plot.line(x=0, y=3, label='native omp', ax=ax)
+    ax = bh_omp_T_median.plot.line(x=0, y=3, label='bh omp', ax=ax)
     ax.set(xlabel='bodies', ylabel='time, s', title='omp')
     plt.savefig('img/lab3_1.png')
 
@@ -131,6 +131,40 @@ def lab3():
     ax = nn2bh.plot.line(x='bc', legend=False, ax=ax)
     ax.set(xlabel='bodies', ylabel='native/bh', title='omp')
     plt.savefig('img/lab3_3.png')
+
+
+def lab4():
+    """plotting cuda results"""
+    nn = pd.read_csv('data/nn_seq.csv', header=None)
+    nn_cuda = pd.read_csv('data/nn_cuda.csv', skiprows=1, header=None)
+    nn_omp = pd.read_csv('data/nn_omp.csv', header=None)
+
+    nn_T_median = nn[nn[0] >= 100].groupby(0, as_index=False)[3].median()
+    nn_cuda_T_median = nn_cuda.groupby(0, as_index=False)[2].median()
+    nn_omp_T_median = nn_omp[nn_omp[0] >= 100].groupby(0, as_index=False)[3].median()
+
+    nn_speedup = (nn_T_median[3]/nn_cuda_T_median[2]).to_frame()
+    nn_speedup['bc'] = nn_cuda_T_median[0]
+    cuda_vs_omp = (nn_omp_T_median[3]/nn_cuda_T_median[2]).to_frame()
+    cuda_vs_omp['bc'] = nn_T_median[0]
+
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    ax = nn_speedup.plot.line(x='bc', y=0, label='cuda speedup', ax=ax)
+    ax.set(xlabel='bodies', ylabel='speed up', title='cuda speedup')
+    plt.savefig('img/lab4_1.png')
+
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    ax = nn_cuda_T_median.plot.line(x=0, y=2, label='native cuda', ax=ax)
+    ax.set(xlabel='bodies', ylabel='time, s', title='cuda median time')
+    plt.savefig('img/lab4_2.png')
+
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    ax = cuda_vs_omp.plot.line(x='bc', y=0, ax=ax, legend=False)
+    ax.set(xlabel='bodies', title='omp/cuda speedup')
+    plt.savefig('img/lab4_3.png')
 
 
 # plot initial distribution
@@ -171,4 +205,5 @@ if __name__ == '__main__':
     # lab1()
     # lab2()
     # lab3()
-    plot_variance()
+    lab4()
+    # plot_variance()
